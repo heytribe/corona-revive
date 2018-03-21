@@ -1,20 +1,24 @@
--- Lua
+---------------------------------------------------------------------------------
+-- Modules
 
 local composer  = require "composer"
-
--- Local
-
 local reviveui  = require "revive.reviveui"
 local strings   = require "revive.strings"
 
+---------------------------------------------------------------------------------
+-- Parameters
+
+local tilte
+local message
+local facebookButton
+local skipButton
+local capture
+
+local scene                 = composer.newScene()
 local animationsDuration    = 300
 
 ---------------------------------------------------------------------------------
-
-local scene = composer.newScene()
-local capture
-
----------------------------------------------------------------------------------
+-- Scene
 
 function scene:create(event)
     log('revive - scene:create')
@@ -40,11 +44,6 @@ function scene:create(event)
     sceneGroup:insert(background)
 
 end
-
-local tilte
-local message
-local facebookButton
-local skipButton
 
 function scene:show(event)
     log('revive - scene:show' .. event.phase)
